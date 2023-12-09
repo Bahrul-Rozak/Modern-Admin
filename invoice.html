@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;1,8..144,400;1,8..144,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-primary-500">
+     <!-------------#region nav-->
+     <nav class="bg-primary-900 border-b border-primary-600 fixed z-30 w-full">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start">
+                    <a href="dashboard.html">
+                        <img src="src/img/logo.png" class="h-12 " />
+                    </a>
+                    <form action="#" class="hidden lg:block lg:pl-32">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 mt-2 ml-3 ">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <input type="text" class="bg-gray-50 border border-gray-300 text-primary-900 sm:text-sm rounded-xl focus:ring-second-900 focus:border-second-900 block xl:w-[36rem]  pl-10 p-2" placeholder="Search...">
+                        </div>
+                    </form>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden lg:flex items-center">
+                        <span class="text-base font-normal text-white mr-5 ml-5">Open Source ❤</span>
+                    </div>
+                    <div class="flex items-center text-white mr-2 ml-2"> </div>
+                    <div class="flex justify-end p-4">
+                        <div class="relative">
+                            <button class="text-white" id="user-menu-bell-button">
+                                <i class="fa-solid fa-bell"></i>
+                            </button>
+                            <div class="absolute right-0  mt-8 w-56 bg-white border border-primary-600 rounded-lg  hidden shadow-xl" id="user-menu-bell">
+                                <div class="p-4 border-b border-second-900">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full mr-2">
+                                            <img src="src/img/users/1.png" class="rounded-full">
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">Bahrul Rozak</p>
+                                            <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="items-center ml-5">
+                                        <p class="text-sm font-semibold text-gray-500"> a few moments ago</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-b border-second-900">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full mr-2">
+                                            <img src="src/img/users/2.png" class="rounded-full">
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">John Wich</p>
+                                            <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="items-center ml-5">
+                                        <p class="text-sm font-semibold text-gray-500"> a few moments ago</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-b border-second-900">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full mr-2">
+                                            <img src="src/img/users/3.png" class="rounded-full">
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">Kate Jack</p>
+                                            <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="items-center ml-5">
+                                        <p class="text-sm font-semibold text-gray-500"> a few moments ago</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 text-center">
+                                    <a href="" class="text-primary-800 hover:underline"> All Message</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-end p-4">
+                        <div class="relative">
+                            <button class="text-white" id="user-menu-inbox-button">
+                                <i class="fa-solid fa-inbox"></i>
+                            </button>
+                            <div class="absolute right-0  mt-8 w-56 bg-white border border-primary-600 rounded-lg  hidden shadow-xl" id="user-menu-Inbox">
+                                <div class="p-4 border-b border-second-900">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full mr-2">
+                                            <img src="src/img/users/1.png" class="rounded-full">
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">Efe Görkem Ümit</p>
+                                            <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="items-center ml-5">
+                                        <p class="text-sm font-semibold text-gray-500"> a few moments ago</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-b border-second-900">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full mr-2">
+                                            <img src="src/img/users/2.png" class="rounded-full">
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">John Wich</p>
+                                            <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="items-center ml-5">
+                                        <p class="text-sm font-semibold text-gray-500"> a few moments ago</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-b border-second-900">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full mr-2">
+                                            <img src="src/img/users/3.png" class="rounded-full">
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">Kate Jack</p>
+                                            <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="items-center ml-5">
+                                        <p class="text-sm font-semibold text-gray-500"> a few moments ago</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 text-center">
+                                    <a href="" class="text-primary-800 hover:underline"> All Message</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-end p-4">
+                        <div class="relative">
+                            <button class="text-white" id="user-menu-button">
+                                <img src="https://placehold.co/400" class="w-9 h-9 ml-2 rounded-full" />
+                            </button>
+                            <div class="absolute right-0  mt-8 w-56 bg-white border border-primary-600 rounded-lg hidden shadow-xl" id="user-menu">
+                                <div class="px-4 py-2">
+                                    <p class="text-gray-600">Bahrul Rozak</p>
+                                    <p class="text-gray-600">rozak@gmail.com</p>
+                                </div>
+                                <ul>
+                                    <li class="hover:bg-second-900"><a href="#" class="block px-4 py-2 text-primary-700">Dashboard </a></li>
+                                    <li class="hover:bg-second-900"><a href="#" class="block px-4 py-2 text-primary-700">Settings </a></li>
+                                    <li class="hover:bg-second-900"><a href="#" class="block px-4 py-2 text-primary-700">Sign-out </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" target="_blank" class="hidden sm:inline-flex ml-5 text-primary-900 bg-second-900 hover:bg-second-800 focus:ring-4 font-medium px-5 py-3 rounded-xl items-center mr-3">
+                        <span class="mr-3">
+                            <i class="fa-brands fa-github"></i>
+                        </span> Bahrul Rozak</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-------------#endregion nav-->
+    <!-------------#region mobile menu-->
+    <div class="lg:hidden flex fixed z-50 w-full border-t border-second-900 shadow-xl bg-primary-900 py-3 px-6 bottom-0 justify-around items-start">
+        <a href="#" class="block relative text-center text-second-900">
+            <div class="text-3xl" id="menuBar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </a>
+        <a href="#" class="block relative text-center text-second-900">
+            <div class="text-3xl" id="menuBar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </a>
+    </div>
+    <!-------------#endregion mobile menu -->
+    <!------------#region mobile menu -->
+    <div class="fixed left-0 top-0 w-full h-full z-50 bg-primary-900 bg-opacity-30 shadow hidden" id="mobileMenu">
+        <div class="absolute left-0 top-0 w-72 h-full z-50 bg-primary-900 text-white shadow-md">
+            <div class="text-gray-50 text-lg absolute right-3 top-3 cursor-pointer" id="closeMenu">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="ml-2 mt-14">
+                <ul class="space-y-2 pb-2 mt-6 relative">
+                    <li>
+                        <a href="dashboard.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                            <i class="fa-solid fa-gauge"></i>
+                            <span class="ml-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 toggle-menu">
+                            <i class="fa-solid fa-lock"></i>
+                            <span class="ml-4">Authentication</span>
+                            <i class="fa-solid fa-chevron-down ml-auto"></i>
+                        </a>
+                        <ul class="ml-6 submenu hidden">
+                            <li>
+                                <a href="index.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Sign in</span>
+                                </a>
+                                <a href="sign-up.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Sign up</span>
+                                </a>
+                                <a href="forget-password.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Forgot Password</span>
+                                </a>
+                                <a href="reset-password.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Reset Password</span>
+                                </a>
+                                <a href="profile-lock.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Profile Lock</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 toggle-menu">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span class="ml-3">E-Commerce</span>
+                            <i class="fa-solid fa-chevron-down ml-auto"></i>
+                        </a>
+                        <ul class="ml-6 submenu hidden">
+                            <li>
+                                <a href="products.html"
+                                    class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Products</span>
+                                </a>
+                                <a href="billing.html"
+                                    class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900  ">
+                                    <span class="ml-3">Billing</span>
+                                </a>
+                                <a href="invoice.html"
+                                    class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <span class="ml-3">Invoice</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!------------- Dropdown Menu End-->
+                    <!------------- Dropdown Menu-->
+                    <li>
+                        <a href="javascript:void(0)"
+                            class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 toggle-menu">
+                            <i class="fa-solid fa-users"></i><span class="ml-4">Users</span>
+                            <i class="fa-solid fa-chevron-down ml-auto"></i>
+                        </a>
+                        <ul class="ml-6 submenu hidden">
+                            <li>
+                                <a href="userlist.html"
+                                    class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900">
+                                    <span class="ml-3">UserList</span>
+                                </a>
+                                <a href="profile.html"
+                                    class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900">
+                                    <span class="ml-3">Profile</span>
+                                </a>
+                                <a href="settings.html"
+                                    class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900">
+                                    <span class="ml-3">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!------------- Dropdown Menu End-->
+                    <li>
+                        <a href="404.html"
+                            class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                            <i class="fa-solid fa-bomb"></i>
+                            <span class="ml-3">404</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="500.html"
+                            class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                            <i class="fa-solid fa-bug"></i>
+                            <span class="ml-3">500 server</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="maintenance.html"
+                            class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span class="ml-3">Maintenance</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="help.html"
+                            class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                            <i class="fa-regular fa-life-ring"></i>
+                            <span class="ml-3">Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-------------#endregion mobile menu-->
+<div class="flex">
+                <main class="flex lg:ml-60 xl:ml-44 2xl:ml-60 mt-16 lg:mt-16 w-full p-6 " >
+                    <div class=" mt-6 lg:mt-0 w-full lg:p-6 p-0">
+                        <div class="container  mx-auto lg:p-4 p-0">
+                            <div class="bg-primary-900 text-white p-4 rounded-xl">
+                                <nav class="text-base mb-1 rounded-xl p-0">
+                                    <ol class="list-none p-0 inline-flex">
+                                        <li class="flex items-center">
+                                            <a href="dashboard.html">         
+                                                 <i class="fa-solid fa-gauge"></i> 
+                                               <span class="ml-1 mr-4">Dashboard</span> 
+                                            </a>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </li>
+                                        <li class="flex items-center ml-4">
+                                            <a href="#">        
+                                                 <i class="fa-solid fa-cart-plus"></i>
+                                               <span class="ml-1 mr-4">E-Commerce</span> 
+                                            </a>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </li>
+                                        <li class="flex items-center ml-4">
+                                            <a href="#">       
+                                               <span class="ml-1 mr-4">Invoice</span> 
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                         </div>
+                         <div class="container  mx-auto lg:p-4 p-0">
+                           <div class="bg-primary-900 text-white p-6">
+                            <div class="text-center mb-5">
+                                <h1>INVOICE #66666</h1>
+                                <p>Bahrul Rozak</p>
+                                <p>Republik Indonesia</p>
+                                <p>06.02.2023</p>
+                            </div>
+                            <div class="mb-5">
+                                <h2 class="font-semibold text-xl">BILL TO</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                <p>Vat: Code: 6565656151</p>
+                            </div>
+                            <table class="w-full border-collapse border">
+                                <thead>
+                                    <tr>
+                                    <th class="border py-2 px-2 text-left"> ITEM</th>
+                                    <th class="border py-2 px-2 text-left"> PRICE</th>
+                                    <th class="border py-2 px-2 text-left"> QTY</th>
+                                    <th class="border py-2 px-2 text-left"> OFF</th>
+                                    <th class="border py-2 px-2 text-left"> TOTAL</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                    <td class="border py-2 px-2 text-left"> Pixel Design System</td>
+                                    <td class="border py-2 px-2 text-left"> $128.00</td>
+                                    <td class="border py-2 px-2 text-left"> 1</td>
+                                    <td class="border py-2 px-2 text-left"> 50%</td>
+                                    <td class="border py-2 px-2 text-left"> $74.00</td>
+                                   </tr>
+                                   <tr>
+                                    <td class="border py-2 px-2 text-left"> Volt Dashboard Template</td>
+                                    <td class="border py-2 px-2 text-left"> $128.00</td>
+                                    <td class="border py-2 px-2 text-left"> 1</td>
+                                    <td class="border py-2 px-2 text-left"> 50%</td>
+                                    <td class="border py-2 px-2 text-left"> $74.00</td>
+                                   </tr>
+                                   <tr>
+                                    <td class="border py-2 px-2 text-left"> Neumorphism UI</td>
+                                    <td class="border py-2 px-2 text-left"> $128.00</td>
+                                    <td class="border py-2 px-2 text-left"> 1</td>
+                                    <td class="border py-2 px-2 text-left"> 50%</td>
+                                    <td class="border py-2 px-2 text-left"> $74.00</td>
+                                   </tr>
+                                </tbody>
+                            </table>
+                            <div class="mt-5">
+                                <div class="flex justify-between">
+                                    <span class="text-xl font-semibold">SUBTOTAL</span>
+                                    <span>$450.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-xl font-semibold">TAX RATE</span>
+                                    <span>%5</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-xl font-semibold">DISCOUNT</span>
+                                    <span>$45.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-xl font-semibold">TOTAL</span>
+                                    <span>$400.00</span>
+                                </div>
+                            </div>
+                           </div>
+                        </div>
+                  <!-------------#region footer-->
+                <div class="container mx-auto lg:p-4 p-0 mb-12 mt-6 lg:mb-0 lg:mt-0">
+                    <div class="lg:flex lg:justify-between text-center bg-primary-900 rounded-lg">
+                        <div class="lg:text-left lg:p-4">
+                            <ul class="lg:flex lg:space-x-4">
+                                <li><a href="#" class="text-white">Terms and Conditions</a></li>
+                                <li><a href="#" class="text-white">Licensing</a></li>
+                                <li><a href="#" class="text-white">Privacy Policy</a></li>
+                                <li><a href="#" class="text-white">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="lg:text-right  p-4">
+                            <div class="flex justify-center space-x-4">
+                                <a href="https://www.youtube.com/@bahrulrozak078?sub_confirmation=1" target="_blank" class="text-second-900 hover:text-second-600 transition">
+                                    <i class="fa-brands fa-youtube fa-xl"></i>
+                                </a>
+                                <a href="https://github.com/Bahrul-Rozak" target="_blank" class="text-second-900 hover:text-second-600 transition">
+                                    <i class="fa-brands fa-github fa-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-------------#endregion footer-->
+                    </div>
+                </main>
+             <!-------------#region sidebar-->
+        <aside class="fixed hidden z-20 h-full top-0 left-0 pt-16 lg:flex flex-shrink-0 flex-col w-72">
+            <div class="bg-primary-900 border-b border-primary-600 relative flex-1 flex flex-col pt-0">
+                <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+                    <div class="flex-1 px-3 bg-primary-900 divide-y space-y-2">
+                        <ul class="space-y-2 pb-2 mt-6 relative">
+                            <li>
+                                <a href="dashboard.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <i class="fa-solid fa-gauge"></i>
+                                    <span class="ml-3">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 toggle-menu">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span class="ml-4">Authentication</span>
+                                    <i class="fa-solid fa-chevron-down ml-auto"></i>
+                                </a>
+                                <ul class="ml-6 submenu hidden">
+                                    <li>
+                                        <a href="index.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Sign in</span>
+                                        </a>
+                                        <a href="sign-up.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Sign up</span>
+                                        </a>
+                                        <a href="forget-password.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Forgot Password</span>
+                                        </a>
+                                        <a href="reset-password.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Reset Password</span>
+                                        </a>
+                                        <a href="profile-lock.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Profile Lock</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 toggle-menu">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <span class="ml-3">E-Commerce</span>
+                                    <i class="fa-solid fa-chevron-down ml-auto"></i>
+                                </a>
+                                <ul class="ml-6 submenu hidden">
+                                    <li>
+                                        <a href="products.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Products</span>
+                                        </a>
+                                        <a href="billing.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900  ">
+                                            <span class="ml-3">Billing</span>
+                                        </a>
+                                        <a href="invoice.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                            <span class="ml-3">Invoice</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 toggle-menu">
+                                    <i class="fa-solid fa-users"></i><span class="ml-4">Users</span>
+                                    <i class="fa-solid fa-chevron-down ml-auto"></i>
+                                </a>
+                                <ul class="ml-6 submenu hidden">
+                                    <li>
+                                        <a href="userlist.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900">
+                                            <span class="ml-3">UserList</span>
+                                        </a>
+                                        <a href="profile.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900">
+                                            <span class="ml-3">Profile</span>
+                                        </a>
+                                        <a href="settings.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900">
+                                            <span class="ml-3">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="404.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <i class="fa-solid fa-bomb"></i>
+                                    <span class="ml-3">404</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="500.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <i class="fa-solid fa-bug"></i>
+                                    <span class="ml-3">500 server</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="maintenance.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 "> <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <span class="ml-3">Maintenance</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="help.html" class="text-white hover:bg-primary-800 font-poppins text-lg px-1 py-2 items-center flex rounded-lg font-normal  hover:text-second-900 ">
+                                    <i class="fa-regular fa-life-ring"></i>
+                                    <span class="ml-3">Help</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-------------#endregion sidebar-->
+</div>
+        <script type="text/javascript" src="src/js/script.js"></script>
+</body>
+</html>
